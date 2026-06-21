@@ -2,6 +2,21 @@
 # Prerequisites
 *.d
 
+config.guess~
+config.sub~
+aclocal.m4
+autom4te.cache
+compile
+config.guess
+config.sub
+configure
+configure~
+depcomp 
+install-sh
+missing
+Makefile.in
+GNUmakefile.in
+
 # Object files
 *.o
 *.ko
