@@ -21,4 +21,4 @@ steps:
       - ../configure
       - make V=1
       - make install && cd .. && cd test
-      - gcc index.test -lstdoc && ./a.out
+      - gcc index.c -lstdoc && ./a.out
