@@ -1,0 +1,24 @@
+matrix:
+  include:
+    - COMPILER: gcc
+      CC: gcc
+    - COMPILER: clang
+      CC: clang
+
+when:
+  - event: pull_request
+
+steps:
+  - name: ${COMPILER}-${ARCH}
+    image: archlinux:latest
+    environment:
+      CC: ${CC}
+    commands:
+      - pacman-key --init
+      - pacman -Syu --noconfirm ${COMPILER} make automake libtool autoconf binutils
+      - autoreconf -fi
+      - mkdir -p build && cd build
+      - ../configure
+      - make V=1
+      - make install && cd .. && cd test
+      - gcc index.test -lstdoc && ./a.out
