@@ -1,0 +1,29 @@
+AM_CPPFLAGS = -I$(top_srcdir)/include
+
+AM_CFLAGS = -Wall -Wextra -std=c11 -nolibc -nostdlib -ffreestanding -fno-builtin -fno-stack-protector
+
+lib_LIBRARIES = libstdoc.a
+libstdoc_a_SOURCES = io/stdoc_printf.c
+
+if ARCH_X86_64
+libstdoc_a_SOURCES += assembly/write_x86.S
+endif
+if ARCH_I686
+libstdoc_a_SOURCES += assembly/write_i686.S
+endif
+if ARCH_AARCH64
+libstdoc_a_SOURCES += assembly/write_aarch64.S
+endif
+if ARCH_ARM32
+libstdoc_a_SOURCES += assembly/write_arm32.S
+endif
+
+include_HEADERS = include/libstdoc.h
+
+libstdocioincludedir = $(includedir)/libstdoc/io
+libstdocioinclude_HEADERS = \
+    include/libstdoc/io/stdoc_printf.h
+
+libstdocsyscallincludedir = $(includedir)/libstdoc/syscall
+libstdocsyscallinclude_HEADERS = \
+    include/libstdoc/syscall/syscall_write.h
