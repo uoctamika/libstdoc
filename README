@@ -1,3 +1,36 @@
-# libstdoc
+libstdoc
+-----------
 
-Library for The C Programming Language
+libstdoc is library for C Programming language.
+
+libstdoc aims to be fast, customizable, safe.
+while maintaining performance and control close to
+traditional GNU Library C (glibc).
+
+Project Status
+-----------------
+
+libstdoc is currently in the beta stage.
+
+The library is under active development and is not yet considered stable.
+standard library, library internals, and project structure may change
+frequently until the first public release of v1.0.0 (now it v1.0.0-beta).
+
+Repository Structure
+-----------------------
+assembly/     Source Code of Assembly
+io/           Source Code of Input Output
+dependencies/ External dependencies
+docs/         Documentation
+etc/          Project configuration files
+include/      Global include file
+test/         Test with pure C
+build/        manual build directory
+
+Contributing
+---------------
+
+Contributions, bug reports, and suggestions are welcome.
+
+As the library is still in early development, breaking changes may occur
+without notice.
