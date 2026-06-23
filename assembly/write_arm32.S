@@ -5,8 +5,6 @@
  * See the file LICENSE for license details.
  */
 
-#include <libstdoc/syscall/syscall_write.h>
-
 .globl write_arm32
 
 .type write_arm32, %function
