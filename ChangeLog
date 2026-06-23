@@ -1,0 +1,6 @@
+This project uses Git for detailed change history.
+
+See:
+
+    git log --stat
+    git shortlog -sn
