@@ -1,3 +1,10 @@
+/*
+ * Copyright (C) 2026 Uoc Azizah
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * See the file LICENSE for license details.
+ */
+
 #include <stdarg.h>
 #include <stddef.h>
 #include <libstdoc/io/stdoc_printf.h>

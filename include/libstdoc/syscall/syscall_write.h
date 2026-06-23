@@ -1,3 +1,10 @@
+/*
+ * Copyright (C) 2026 Uoc Azizah
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * See the file LICENSE for license details.
+ */
+
 #ifndef WRITE_ASM_H
 #define WRITE_ASM_H
 
