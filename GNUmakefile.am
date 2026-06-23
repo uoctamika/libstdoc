@@ -18,6 +18,8 @@ if ARCH_ARM32
 libstdoc_a_SOURCES += assembly/write_arm32.S
 endif
 
+EXTRA_DIST = LICENSE README AUTHORS NEWS ChangeLog
+
 include_HEADERS = include/libstdoc.h
 
 libstdocioincludedir = $(includedir)/libstdoc/io
