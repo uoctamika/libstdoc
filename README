@@ -14,7 +14,7 @@ libstdoc is currently in the beta stage.
 
 The library is under active development and is not yet considered stable.
 standard library, library internals, and project structure may change
-frequently until the first public release of v1.0.0 (now it v1.0.0-beta).
+frequently until the first public release of v1.0.0 (now it v1.0.1-beta).
 
 Repository Structure
 -----------------------
@@ -26,6 +26,13 @@ etc/          Project configuration files
 include/      Global include file
 test/         Test with pure C
 build/        manual build directory
+
+COPYING
+----------------------
+libstdoc is distributed under the terms of the GNU General Public
+License version 2 or any later version.
+
+See the file COPYING for details.
 
 Contributing
 ---------------
