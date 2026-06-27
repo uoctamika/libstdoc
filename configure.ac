@@ -15,7 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with libstdoc. If not, see <https://www.gnu.org/licenses/>.
 
-AC_INIT([libstdoc], [1.0.1-beta], [uoctamika.codeberg.org@gmail.com])
+AC_INIT([libstdoc], [2.0.0-beta], [uoctamika.codeberg.org@gmail.com])
 AM_INIT_AUTOMAKE([foreign subdir-objects silent-rules])
 AC_CONFIG_SRCDIR([include/libstdoc.h])
 AC_CANONICAL_HOST
@@ -23,8 +23,12 @@ AC_CANONICAL_HOST
 AM_SILENT_RULES([yes])
 
 AC_PROG_CC
+AC_PROG_CXXCPP
 AC_PROG_RANLIB
 AM_PROG_AS
+
+AC_LANG([C])
+AC_LANG([C++])
 
 AC_CHECK_HEADERS([
 stdbool.h
