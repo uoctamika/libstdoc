@@ -20,7 +20,13 @@ AM_CPPFLAGS = -I$(top_srcdir)/include
 AM_CFLAGS = -Wall -Wextra -std=c11 -nolibc -nostdlib -ffreestanding -fno-builtin -fno-stack-protector
 
 lib_LIBRARIES = libstdoc.a
-libstdoc_a_SOURCES = io/stdoc_printf.c
+libstdoc_a_SOURCES = \
+     c/io/stdoc_printf.c
+
+AM_CXXFLAGS = -Wall -Wextra -std=c++17 -nostdlib++ -nostdlib -ffreestanding -fno-builtin -fno-stack-protector
+
+libstdoc_a_SOURCES += \
+     cxx/io/stdoc_printf.cxx
 
 if ARCH_X86_64
 libstdoc_a_SOURCES += assembly/write_x86.S
@@ -37,12 +43,31 @@ endif
 
 EXTRA_DIST = README AUTHORS NEWS ChangeLog COPYING
 
-include_HEADERS = include/libstdoc.h
+# Public headers (C)
+include_HEADERS = \
+    include/libstdoc.h
 
+# C headers - io subdirectory
 libstdocioincludedir = $(includedir)/libstdoc/io
 libstdocioinclude_HEADERS = \
-    include/libstdoc/io/stdoc_printf.h
+    include/c/io/stdoc_printf.h
 
+# C headers - syscall subdirectory
 libstdocsyscallincludedir = $(includedir)/libstdoc/syscall
 libstdocsyscallinclude_HEADERS = \
-    include/libstdoc/syscall/syscall_write.h
+    include/c/syscall/syscall_write.h
+
+# C++ headers - io subdirectory (optional - if you want to install C++ headers)
+libstdocxxioincludedir = $(includedir)/libstdoc/cxx/io
+libstdocxxioinclude_HEADERS = \
+    include/cxx/io/stdoc_printf.hxx
+
+# C++ headers - syscall subdirectory (optional)
+libstdocxxsyscallincludedir = $(includedir)/libstdoc/cxx/syscall
+libstdocxxsyscallinclude_HEADERS = \
+    include/cxx/syscall/syscall_write.hxx
+
+# Additional C++ header (main)
+libstdocxxincludedir = $(includedir)/libstdoc
+libstdocxxinclude_HEADERS = \
+    include/libstdoc.hpp
