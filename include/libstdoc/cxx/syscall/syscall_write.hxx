@@ -35,9 +35,17 @@
 #endif
 
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif /* __CPLUSPLUS */
+
 ssize_t write_x86(int fd, const void *buf, size_t count);
 ssize_t write_i686(int fd, const void *buf, size_t count);
 ssize_t write_arm32(int fd, const void *buf, size_t count);
 ssize_t write_aarch64(int fd, const void *buf, size_t count);
 
+#ifdef __cplusplus
+}
+#endif /* __CPLUSPLUS */
 #endif /* WRITE_ASM_HXX */
