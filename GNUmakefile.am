@@ -43,31 +43,25 @@ endif
 
 EXTRA_DIST = README AUTHORS NEWS ChangeLog COPYING
 
-# Public headers (C)
+# Public API
 include_HEADERS = \
-    include/libstdoc.h
-
-# C headers - io subdirectory
-libstdocioincludedir = $(includedir)/libstdoc/io
-libstdocioinclude_HEADERS = \
-    include/c/io/stdoc_printf.h
-
-# C headers - syscall subdirectory
-libstdocsyscallincludedir = $(includedir)/libstdoc/syscall
-libstdocsyscallinclude_HEADERS = \
-    include/c/syscall/syscall_write.h
-
-# C++ headers - io subdirectory (optional - if you want to install C++ headers)
-libstdocxxioincludedir = $(includedir)/libstdoc/cxx/io
-libstdocxxioinclude_HEADERS = \
-    include/cxx/io/stdoc_printf.hxx
-
-# C++ headers - syscall subdirectory (optional)
-libstdocxxsyscallincludedir = $(includedir)/libstdoc/cxx/syscall
-libstdocxxsyscallinclude_HEADERS = \
-    include/cxx/syscall/syscall_write.hxx
-
-# Additional C++ header (main)
-libstdocxxincludedir = $(includedir)/libstdoc
-libstdocxxinclude_HEADERS = \
+    include/libstdoc.h \
     include/libstdoc.hpp
+
+# C headers
+libstdoc_c_ioincludedir = $(includedir)/libstdoc/c/io
+libstdoc_c_ioinclude_HEADERS = \
+    include/libstdoc/c/io/stdoc_printf.h
+
+libstdoc_c_syscallincludedir = $(includedir)/libstdoc/c/syscall
+libstdoc_c_syscallinclude_HEADERS = \
+    include/libstdoc/c/syscall/syscall_write.h
+
+# C++ headers
+libstdoc_cxx_ioincludedir = $(includedir)/libstdoc/cxx/io
+libstdoc_cxx_ioinclude_HEADERS = \
+    include/libstdoc/cxx/io/stdoc_printf.hxx
+
+libstdoc_cxx_syscallincludedir = $(includedir)/libstdoc/cxx/syscall
+libstdoc_cxx_syscallinclude_HEADERS = \
+    include/libstdoc/cxx/syscall/syscall_write.hxx
