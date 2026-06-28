@@ -19,7 +19,7 @@
 
 #include <stdarg.h>
 #include <stddef.h>
-#include <libstdoc/io/stdoc_printf.hxx>
+#include <libstdoc/cxx/io/stdoc_printf.hxx>
 
 #define PRINTF_BUF_SIZE 1024
 

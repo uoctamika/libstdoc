@@ -21,6 +21,6 @@
 #define LIBSTDOC_HPP
 
 /* Standard Input Output Export */
-#include <libstdoc/io/stdoc_printf.hxx>
+#include <libstdoc/cxx/io/stdoc_printf.hxx>
 
 #endif /* LIBSTDOC_HPP */
