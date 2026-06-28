@@ -18,7 +18,7 @@ steps:
       - pacman -Syu --noconfirm ${COMPILER} make automake libtool autoconf binutils
       - autoreconf -fi
       - mkdir -p build && cd build
-      - ../configure
-      - make V=1
+      - ../configure && make V=1
       - make install && cd .. && cd test
-      - gcc index.c -lstdoc && ./a.out
+      - gcc index.c -o app -lstdoc && ./app
+      - gcc index.cxx -o app -lstdoc && ./app
